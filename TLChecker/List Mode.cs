@@ -1,22 +1,14 @@
-﻿
-/****************************** ghost1372.github.io ******************************\
+﻿/****************************** ghost1372.github.io ******************************\
 *	Module Name:	List Mode.cs
 *	Project:		TLChecker
 *	Copyright (C) 2017 Mahdi Hosseini, All rights reserved.
 *	This software may be modified and distributed under the terms of the MIT license.  See LICENSE file for details.
 *
 *	Written by Mahdi Hosseini <Mahdidvb72@gmail.com>,  2017, 9, 24, 10:03 ب.ظ
-*	
+*
 ***********************************************************************************/
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TLChecker
@@ -47,7 +39,6 @@ namespace TLChecker
                     listBox1.Items.Add(singleLine);
                 }
             }
-
         }
 
         private async void btnCheck_Click(object sender, EventArgs e)
@@ -70,16 +61,13 @@ namespace TLChecker
                             listBox2.Items.Add(number);
                             listBox1.Items.RemoveAt(i);
                         }
-
                     }
                     btnCheck.Enabled = true;
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -93,6 +81,7 @@ namespace TLChecker
             btnSave.Enabled = true;
             MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location));
         }
+
         private static void WriteText(string Text)
         {
             using (System.IO.StreamWriter file =
