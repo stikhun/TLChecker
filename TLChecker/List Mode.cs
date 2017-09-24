@@ -76,16 +76,16 @@ namespace TLChecker
             btnSave.Enabled = false;
             for (int i = 0; i < listBox2.Items.Count; i++)
             {
-                WriteText(listBox2.Items[i].ToString());
+                WriteText(listBox2.Items[i].ToString(), BuildVar.Save_Location_Registered);
             }
             btnSave.Enabled = true;
-            MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location));
+            MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location_Registered));
         }
 
-        private static void WriteText(string Text)
+        private static void WriteText(string Text, string Save_Location)
         {
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(BuildVar.Save_Location_Registered, true))
+            new System.IO.StreamWriter(Save_Location, true))
             {
                 file.WriteLine(Text);
             }
@@ -96,7 +96,7 @@ namespace TLChecker
             btnSave2.Enabled = false;
             for (int i = 0; i < listBox1.Items.Count; i++)
             {
-                WriteText(listBox1.Items[i].ToString());
+                WriteText(listBox1.Items[i].ToString(), BuildVar.Save_Location_NotRegistered);
             }
             btnSave2.Enabled = true;
             MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location_NotRegistered));
