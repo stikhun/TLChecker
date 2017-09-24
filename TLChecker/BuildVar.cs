@@ -14,6 +14,7 @@ namespace TLChecker
     {
         public static string apiHash = "b877d15bf5169eec7ac765407ea0cf7a";
         public static int apiId = 16373;
-        public static string Save_Location = "RegisteredNumbers.txt";
+        public static string Save_Location_Registered = "RegisteredNumbers.txt";
+        public static string Save_Location_NotRegistered = "NotRegisteredNumbers.txt";
     }
 }

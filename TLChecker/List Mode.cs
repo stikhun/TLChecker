@@ -85,7 +85,7 @@ namespace TLChecker
         private static void WriteText(string Text)
         {
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(BuildVar.Save_Location, true))
+            new System.IO.StreamWriter(BuildVar.Save_Location_Registered, true))
             {
                 file.WriteLine(Text);
             }
@@ -99,7 +99,7 @@ namespace TLChecker
                 WriteText(listBox1.Items[i].ToString());
             }
             btnSave2.Enabled = true;
-            MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location));
+            MessageBox.Show(string.Format("Saved\n{0}", Application.StartupPath + @"\" + BuildVar.Save_Location_NotRegistered));
         }
     }
 }
